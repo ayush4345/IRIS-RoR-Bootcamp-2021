@@ -4,6 +4,7 @@ name: 'week1'
 on:
   # Triggers the workflow on push or pull request events but only for the  week1 branch
   pull_request:
+    types: [synchronize, opened, reopened, edited]
     branches:
       - 'week1_*'
 
