@@ -7,8 +7,8 @@ def armstrong_number(n)
         number = n
         power = n.to_s.length
         sum=0
-        for i in 1..n do
-            sum=(number%10)**power
+        for i in 1..power do
+            sum+=(number%10)**power
             number=number/10
         if sum==n
             return true
