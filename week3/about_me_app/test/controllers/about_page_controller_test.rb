@@ -23,21 +23,20 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "get about json as json" do
-    get about_json_url, params: {message: "What is up my man"}, format: :json
+    get about_json_url, params: {message: "What is up my man"}, as: :json
     assert_response :success
     body = JSON.parse(response.body)
-    body["message"].should == "What is up my man"
+    assert body["message"] == "What is up my man"
   end
 
   test "get about json as json without params" do
-    get about_json_url, format: :json
+    get about_json_url, as: :json
     assert_response 400 # Bad Request
   end
 
-  test "get about json as xml" do
-    get about_json_url, format: :xml
+  test "get about json as xml without params" do
+    get about_json_url, as: :xml
     assert_response 400 # Bad Request
-    assert_equal "invalid request format", response.body.strip.downcase 
   end
 
   test "check for form partial" do
