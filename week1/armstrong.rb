@@ -10,6 +10,7 @@ def armstrong_number(n)
         for i in 1..power do
             sum+=(number%10)**power
             number=number/10
+        end
         if sum==n
             return true
         else
