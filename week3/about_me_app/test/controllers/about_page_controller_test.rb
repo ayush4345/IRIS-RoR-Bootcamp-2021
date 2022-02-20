@@ -35,7 +35,7 @@ class AboutPageControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "get about json as xml without params" do
-    get about_json_url, as: :xml
+    get '/about_json.xml'
     assert_response 400 # Bad Request
   end
 
