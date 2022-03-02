@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>fill the form</h1>
+    <%= bootstrap_form_with url: about_page_path, method: :post do |form| %>
+        <%= form.text_field :name, label: "Name"%>
+        <%= form.email_field :email, label: "Email" %>
+        <%= form.submit :submit, value: "submit", class: "btn btn-primary"%>
+    <% end %>
+</div>
