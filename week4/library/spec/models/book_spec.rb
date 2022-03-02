@@ -23,17 +23,24 @@ RSpec.describe Book, type: :model do
 
   it "gives the correct citation info" do
     citation_info = "Book Name, written by- John Doe, John Snow is a Random text published by Publication 1"
-    print(subject.citation_info)
     expect(subject.citation_info).to eq citation_info
   end
 
-  it "is invalid without an" do
+  it "is invalid without an author" do
     subject.authors = []
     expect(subject).to be_invalid
   end
 
   it "is invlaid without a publication" do
     subject.publication_id = nil
+    expect(subject).to be_invalid
+  end
+
+  before{
+    described_class.create(title: "Percy Jackson", authors: [auth1,auth2], abstract: "story about an orphan boy", publication_id: pub.id)
+  }
+  it "should have a unique title" do
+    subject.title = "Percy Jackson"
     expect(subject).to be_invalid
   end
 
