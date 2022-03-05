@@ -1,0 +1,2 @@
+class Libraryy < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+<h1>library</h1>
+
+<%books = Book.all%>
+
+<ul>
+
+    <li><%books.each do |book|%>
+            <%=puts book.address.postcode%>
+        <%end %></li>
+</ul>
