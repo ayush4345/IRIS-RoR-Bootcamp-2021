@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @book.abstract %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @book.authors.map(&:full_name) %>
+</p>
+
+<p>
+  <strong>Publication:</strong>
+  <%= @book.publication.name %>
+</p>

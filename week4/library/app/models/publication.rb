@@ -4,9 +4,7 @@ class Publication < ApplicationRecord
     validates :name, presence: true
     
 
-    def self.book_count
-        Book.all.count 
-    
-    
+    def book_count
+        books.count
     end
 end
